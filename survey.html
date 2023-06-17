@@ -57,11 +57,12 @@
             background-color: #45a049;
         }
     </style>
+    <script src="src/scripts/surveyScripts.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Umfrage</h1>
-        <form>
+        <form id="form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
 
@@ -74,7 +75,8 @@
             <input type="submit" value="Absenden">
         </form>
         <br>
-        <a href="/" class="home-link">Zur      ck zur Startseite</a>
+        <p id="log"></p>
+        <a href="http://localhost:9081/werbung" class="home-link">Zurueck zur Startseite</a>
     </div>
 </body>
 </html>
