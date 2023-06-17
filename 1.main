@@ -14,7 +14,7 @@ app = Flask(__name__, template_folder='template')
 try:
     driver = webdriver.Firefox(options=options)
 except Exception as e:
-    logging.error(f"An error occurred while initializing the driver: {str(e>
+    logging.error(f"An error occurred while initializing the driver: {str(e)}")
 # Setze eine Wartezeit zwischen den Aktionen, um die Rate Limits einzuhalten
 def perform_action(action):
     time.sleep(2)  # Warte 2 Sekunden zwischen den Aktionen
@@ -33,6 +33,7 @@ def fill_form():
 def submit_form():
     submit_button = driver.find_element_by_id('submit-button-id')
     submit_button.click()  # Klicke auf den Absende-Button
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -52,7 +53,8 @@ def redirect_to_shop():
         perform_action(fill_form)
         perform_action(submit_form)
     except Exception as e:
-        logging.error(f"An error occurred while redirecting to the shop: {s>    return redirect('/shop')
+        logging.error(f"An error occurred while redirecting to the shop: {str(e)}")
+    return redirect('/shop')
 
 if __name__ == '__main__':
     try:
