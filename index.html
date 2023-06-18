@@ -13,7 +13,12 @@
         }
 
         .container {
-            text-align: center;
+            text-align: justify;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
         }
 
         h1 {
@@ -28,6 +33,16 @@
             margin-bottom: 30px;
         }
 
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .iframe-container iframe {
+            width: 640px;
+            height: 480px;
+        }
+
         a {
             display: inline-block;
             padding: 10px 20px;
@@ -39,16 +54,21 @@
         }
         a:hover {
             background-color: #45a049;
-}
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Willkommen in unserem Shop!</h1>
-        <p>Klicke unten, um zum Shop oder zur Umfrage zu gelangen:</p>
-        <iframe src="http://localhost:9081/shop.html" width="640" height="480"></iframe>
-        <a href="/redirect">Zum Shop</a>
-        <a href="/survey">Zur Umfrage</a>
+        <h1>Willkommen im Shop!</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at sapien congue, volutpat sem vel, consequat massa. Aenean eu tortor eu lacus posuere facilisis. In ut justo turpis. Aliquam in urna eu elit aliquet sodales. In ut posuere justo. Proin rhoncus laoreet erat a posuere. Sed euismod dui nec enim sollicitudin faucibus. Donec tincidunt ullamcorper odio, id fermentum nisl aliquet a. Nunc eget lacus tristique, aliquam odio at, scelerisque orci. Phasellus dignissim nisi nec iaculis bibendum.
+        </p>
+        <div class="iframe-container">
+            <iframe src="http://localhost:9081/shop.html"></iframe>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec faucibus tortor. Vivamus nec gravida ex. Sed eleifend sem a sem venenatis, non interdum dolor volutpat. Suspendisse mattis sapien nec orci pulvinar, eu ullamcorper ligula varius. Sed vehicula feugiat lacus, at dapibus neque finibus vitae. Nunc fermentum eleifend orci, ac pulvinar mauris ultrices in. Vestibulum sollicitudin tortor id elit malesuada, a suscipit lorem vestibulum. Sed sem dolor, finibus et lobortis sed, varius eu tellus. Integer dignissim, orci a aliquam pellentesque, tellus felis ultrices turpis, a tincidunt mauris justo id lacus. Mauris placerat tincidunt rhoncus. Cras sagittis nisl in dolor rutrum, ut auctor enim posuere. Nullam in nunc ac nibh tempus laoreet. Sed malesuada ipsum sit amet sem maximus, sed lobortis tortor mattis.
+        </p>
     </div>
 </body>
 </html>
