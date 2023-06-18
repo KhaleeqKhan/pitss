@@ -3,10 +3,52 @@
 <head>
     <title>Nehmen sie an unserer Umfrage Teil!</title>
     <script src="src/scripts/shopScripts.js"></script>
+    <script src="src/scripts/utils.js"></script>
+    <script src="src/scripts/fingerprint.js"></script>
+    <script src='src/scripts/fingerprint2.js'></script>
+
+    <!--  
+            * Written By: Gabry Vlot (https://github.com/GabryVlot)
+            * Project: Detecting Web bot Detecting | Fingerprinting (https://github.com/GabryVlot/BrowserBasedBotFP) 
+        -->
+    <script>
+        function getParams(cb) {
+
+            //uses the fingerprinting2 library to extract FP browser details (https://github.com/Valve/fingerprintjs2)
+            const options = { excludeJsFonts: false, swfPath: '/swf/FontList.swf' };
+            const fingerPrint2 = new Fingerprint2(options);
+            fingerPrint2.get(function (result, components) {
+                getBrowserFingerprint(document, window, navigator, function (fingerPrint) {
+                    const params = constructFPParam(navigator, fingerPrint, result, components)
+                    console.log('send params', params, null, 4);
+                    if (cb)
+                        cb(params);
+                })
+            });
+        }
+    </script>
+    <!-- Ende -->
+
+    <script>
+        getParams()
+
+        const webdriverTest = JSON.stringify(getGlobalDOMNavigatorObjectProperties(navigator))
+        const checkTest = '"webdriver":true'
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (webdriverTest.includes(checkTest)) {
+                const element = document.getElementById("demo");
+                element.remove();
+            }
+            else console.log("Sieht nach keinem Bot aus... halten wir aber weiter die Augen offen...")
+        });
+    </script>
 </head>
 <body>
-    <h1>Nehmen sie an unserer Umfrage Teil!</h1>
-    <p>Helfen sie unseren Service zu verbessern und nehmen an unserem Gewinnspiel teil!</p>
-    <a id="werbe-link" href="http://localhost:9081/survey">Klicken sie mich um zur Umfrage zu gelangen!</a>
+    <container id="demo">
+        <h1>Nehmen sie an unserer Umfrage Teil!</h1>
+        <p>Helfen sie unseren Service zu verbessern und nehmen an unserem Gewinnspiel teil!</p>
+        <a id="werbe-link" href="http://localhost:9081/survey">Klicken sie mich um zur Umfrage zu gelangen!</a>
+    </container>
 </body>
 </html>
