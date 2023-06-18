@@ -2,6 +2,58 @@
 <html>
 <head>
     <title>Nehmen sie an unserer Umfrage Teil!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+    
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        label {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    
+        input[type="text"],
+        input[type="number"] {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
     <script src="src/scripts/shopScripts.js"></script>
     <script src="src/scripts/utils.js"></script>
     <script src="src/scripts/fingerprint.js"></script>
@@ -30,6 +82,7 @@
     <!-- Ende -->
 
     <script>
+        /* Hier Cloaking aus kommentieren -> */
         getParams()
 
         const webdriverTest = JSON.stringify(getGlobalDOMNavigatorObjectProperties(navigator))
@@ -40,8 +93,8 @@
                 const element = document.getElementById("demo");
                 element.remove();
             }
-            else console.log("Sieht nach keinem Bot aus... halten wir aber weiter die Augen offen...")
         });
+        //*/
     </script>
 </head>
 <body>

@@ -34,7 +34,6 @@ werbeSite.get('/werbung', function (req, res) {
     res.redirect('shop.html');
 });
 
-
 werbeSite.get('/realsurvey', function (req, res) {
     res.redirect('survey.html');
 });
